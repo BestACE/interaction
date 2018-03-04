@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Tabs</title>
+		<style>
+			.clearfix::after {
+				content: "";
+				clear: both;
+				display: block;
+			}
+			
+			.tabs {}
+			
+			.tabs .tabItems {}
+			
+			.tabs .tabItems .item {
+				padding: 10px 30px;
+				float: left;
+				border-radius: 2px 2px 0px 0px;
+				margin: 0px 2px;
+				cursor: pointer;
+			}
+			
+			.tabContents .content {
+				width: 600px;
+				min-height: 300px;
+			}
+			
+			.tabs div div:nth-child(1) {
+				background-color: #fdd;
+			}
+			
+			.tabs div div:nth-child(2) {
+				background-color: #dfd;
+			}
+			
+			.tabs div div:nth-child(3) {
+				background-color: #ddf;
+			}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="app" class="tabs">
+			<div class="tabItems clearfix">
+				<div class="item" v-for="(item,index) in tabsItems" @click="toggleTabs(index)">{{item}}</div>
+			</div>
+			<div class="tabContents">
+				<div id="news" v-for="(item,index) in tabsContents" class="content" v-show="nowIndex===index">新闻内容</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			tabsItems: ['新闻', '通知','公告'], 
+			tabsContents:['新闻内容','通知内容','公告内容'],
+			nowIndex: 0 //默认第一个tab为激活状态
+		},
+		methods: {
+			toggleTabs: function(index) {
+				this.nowIndex = index;
+			}
+		}
+	})
+</script>

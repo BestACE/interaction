@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<button v-on:click="ok=!ok">切换</button>
+			<h1 v-if="ok">Hello {{name}}</h1>
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:'#app',
+				data:{
+					name:'whq',
+					ok:true
+				},
+				methods:{
+					changeState:function(){
+						this.ok=!this.ok;
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
