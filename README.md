@@ -1,6 +1,6 @@
 # 交互开发实战
 
-##　[课程简介](https://github.com/BestACE/interaction/issues/1)
+## [课程简介](https://github.com/BestACE/interaction/issues/1)
 
 本课程为交互开发的进阶课程，旨在通过项目实战的方式提升学生的交互开发能力，课程内容主要包括以下几个部分：
 1. JS语言的深化和提升
@@ -19,3 +19,5 @@
 4. [Awesome Vue.js](https://github.com/vuejs/awesome-vue)
 
 ## 课程活动
+1. 免考活动
+2. 课前分享活动
