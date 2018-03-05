@@ -76,6 +76,7 @@ body {
   margin: 20px 0;
   line-height: 1.3;
   text-align: left;
+  font-size: 0.9em;
 }
 
 /* Ensure certain elements are never larger than the slide itself */

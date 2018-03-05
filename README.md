@@ -20,6 +20,7 @@
 
 ## 课程讲义
 1. [第01讲](https://bestace.github.io/interaction/ppts/ppt/01.html)
+2. [第02讲](https://bestace.github.io/interaction/ppts/ppt/02.html)
 
 ## 课程活动
 1. 免考活动
