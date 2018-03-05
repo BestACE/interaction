@@ -18,6 +18,10 @@
 3. Vue.js作者[尤雨溪](http://evanyou.me/)
 4. [Awesome Vue.js](https://github.com/vuejs/awesome-vue)
 
+## 课程讲义
+1. [第01讲](https://bestace.github.io/interaction/ppts/index.html)
+
 ## 课程活动
 1. 免考活动
 2. 课前分享活动
+
