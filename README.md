@@ -19,7 +19,7 @@
 4. [Awesome Vue.js](https://github.com/vuejs/awesome-vue)
 
 ## 课程讲义
-1. [第01讲](https://bestace.github.io/interaction/ppts/index.html)
+1. [第01讲](https://bestace.github.io/interaction/ppts/ppt/01.html)
 
 ## 课程活动
 1. 免考活动
