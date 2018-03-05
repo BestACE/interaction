@@ -6,17 +6,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
+		<!--1.导入vue-->
 		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	</head>
 
 	<body>
+		<!--2.html里面声明式的方式使用数据 -->
 		<div id="app">
 			<h1>{{message}}</h1>
 			<a href="#" v-bind:title="message">鼠标悬停看看效果</a>
 		</div>
 		<script type="text/javascript">
+			//3. JS初始化一个Vue对象
 			var app=new Vue({
+				//绑定的html元素，利用CSS选择器的方式选择元素
 				el:'#app',
+				//数据
 				data:{
 					message:'hello vue!'
 				}
