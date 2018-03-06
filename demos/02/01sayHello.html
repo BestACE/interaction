@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<div id="app">
+			<h2>{{name}}</h2>
+			<!--通过指令表达式访问方法-->
+			<button @click="sayHello">按钮</button>
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:"#app",
+				data:{
+					name:'tom'
+				},
+				methods:{
+					sayHello:function(){
+						//方法中的this自动绑定为Vue实例
+						console.log(this.name,this===app);
+					}
+				}
+			});
+			//通过Vue实例访问方法
+			app.sayHello();
+		</script>
+	</body>
+</html>

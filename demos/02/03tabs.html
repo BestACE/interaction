@@ -49,7 +49,7 @@
 				<div class="item" v-for="(item,index) in tabsItems" @click="toggleTabs(index)">{{item}}</div>
 			</div>
 			<div class="tabContents">
-				<div id="news" v-for="(item,index) in tabsContents" class="content" v-show="nowIndex===index">新闻内容</div>
+				<div id="news" v-for="(item,index) in tabsContents" class="content" v-show="nowIndex===index">{{item}}</div>
 			</div>
 		</div>
 	</body>

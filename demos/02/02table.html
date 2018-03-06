@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>tables</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<table class="table table-bordered table-striped">
+				<tr>
+					<th>序号</th>
+					<th>物品</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>小计</th>
+				</tr>
+				<tr v-for="(good,index) in goods">
+					<td>{{index+1}}</td>
+					<td>{{good.name}}</td>
+					<td>{{good.price}}</td>
+					<td><input type="number" min="0" v-model="good.count" /></td>
+					<td>{{getSum(index)}}</td>
+				</tr>
+				<tr>
+					<td colspan="4">总计</td>
+					<td>{{getTotalSum}}</td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			var app = new Vue({
+				el: '#app',
+				data: {
+					goods: [{
+						name: '苹果',
+						price: 55,
+						count: 2
+					}, {
+						name: '香蕉',
+						price: 65,
+						count: 3
+					}],
+				},
+				methods: {
+					getSum: function(i) {
+						return this.goods[i].price * this.goods[i].count;
+					}
+				},
+				computed: {
+					getTotalSum: function() {
+						var sum = 0;
+						for(var i = 0; i < this.goods.length; i++) {
+							sum += this.goods[i].price * this.goods[i].count;
+						}
+						return sum;
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
