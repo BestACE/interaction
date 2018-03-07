@@ -21,6 +21,7 @@
 ## 课程讲义
 1. [第01讲 课程概述](https://bestace.github.io/interaction/ppts/ppt/01.html)
 2. [第02讲 Vue初体验](https://bestace.github.io/interaction/ppts/ppt/02.html)
+3. [第03讲 事件](https://bestace.github.io/interaction/ppts/ppt/03.html)
 
 ## 课程案例
 1. 课程概述
@@ -37,4 +38,3 @@
 ## 课程活动
 1. 免考活动
 2. 课前分享活动
-
