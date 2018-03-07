@@ -19,8 +19,20 @@
 4. [Awesome Vue.js](https://github.com/vuejs/awesome-vue)
 
 ## 课程讲义
-1. [第01讲](https://bestace.github.io/interaction/ppts/ppt/01.html)
-2. [第02讲](https://bestace.github.io/interaction/ppts/ppt/02.html)
+1. [第01讲 课程概述](https://bestace.github.io/interaction/ppts/ppt/01.html)
+2. [第02讲 Vue初体验](https://bestace.github.io/interaction/ppts/ppt/02.html)
+
+## 课程案例
+1. 课程概述
+	1. [开始上手](https://bestace.github.io/interaction/demos/01/01开始操作.html)
+	2. [双向绑定](https://bestace.github.io/interaction/demos/01/02双向绑定.html)
+	3. [事件](https://bestace.github.io/interaction/demos/01/03事件.html)
+2. Vue初体验
+	1. [sayHello](https://bestace.github.io/interaction/demos/02/01sayHello.html)
+	2. [购物计算](https://bestace.github.io/interaction/demos/02/02table.html)
+3. 事件
+	1. [多彩选项卡效果](https://bestace.github.io/interaction/demos/03/01tab.html)
+
 
 ## 课程活动
 1. 免考活动
