@@ -35,6 +35,7 @@
 			var app = new Vue({
 				el: '#app',
 				data: {
+					sum:0,
 					goods: [{
 						name: '苹果',
 						price: 55,
@@ -56,7 +57,7 @@
 						for(var i = 0; i < this.goods.length; i++) {
 							sum += this.goods[i].price * this.goods[i].count;
 						}
-						return sum;
+						return this.sum=sum;
 					}
 				}
 			})

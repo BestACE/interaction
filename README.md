@@ -20,18 +20,18 @@
 
 ## 课程讲义
 1. [第01讲 课程概述](https://bestace.github.io/interaction/ppts/ppt/01.html)
-2. [第02讲 Vue初体验](https://bestace.github.io/interaction/ppts/ppt/02.html)
-3. [第03讲 事件](https://bestace.github.io/interaction/ppts/ppt/03.html)
+2. [第02讲 Vue实例化](https://bestace.github.io/interaction/ppts/ppt/02.html)
+3. [第03讲 Vue事件机制](https://bestace.github.io/interaction/ppts/ppt/03.html)
 
 ## 课程案例
 1. 课程概述
 	1. [开始上手](https://bestace.github.io/interaction/demos/01/01开始操作.html)
 	2. [双向绑定](https://bestace.github.io/interaction/demos/01/02双向绑定.html)
 	3. [事件](https://bestace.github.io/interaction/demos/01/03事件.html)
-2. Vue初体验
+2. Vue实例化
 	1. [sayHello](https://bestace.github.io/interaction/demos/02/01sayHello.html)
 	2. [购物计算](https://bestace.github.io/interaction/demos/02/02table.html)
-3. 事件
+3. Vue事件机制
 	1. [多彩选项卡效果](https://bestace.github.io/interaction/demos/03/01tab.html)
 
 
