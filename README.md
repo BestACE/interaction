@@ -32,7 +32,8 @@
 	1. [sayHello](https://bestace.github.io/interaction/demos/02/01sayHello.html)
 	2. [购物计算](https://bestace.github.io/interaction/demos/02/02table.html)
 3. 事件
-	1. [多彩选项卡效果](https://bestace.github.io/interaction/demos/03/01tab.html)
+    1. [事件使用详解](https://bestace.github.io/interaction/demos/03/01event.html)
+	2. [多彩选项卡效果](https://bestace.github.io/interaction/demos/03/02tab.html)
 
 
 ## 课程活动
