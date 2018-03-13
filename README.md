@@ -39,6 +39,7 @@
 	1. [class切换](https://bestace.github.io/interaction/demos/04/01class.html)
 	2. [style切换](https://bestace.github.io/interaction/demos/04/02style.html)
 	3. [条件渲染](https://bestace.github.io/interaction/demos/04/03if.html)
+	4. [todoList](https://bestace.github.io/interaction/demos/04/04todo.html)
 
 ## 课程活动
 1. 免考活动
