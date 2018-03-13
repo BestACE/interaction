@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<div id="app">
+			<input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
+			<ul>
+				<li v-for="(todo, index) in todos" :key="todo.id" :title="todo.title">
+					{{todo.title}}
+					<button @click="todos.splice(index, 1)">X</button>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					newTodoText: '',
+					todos: [{
+							id: 1,
+							title: 'Do the dishes',
+						},
+						{
+							id: 2,
+							title: 'Take out the trash',
+						},
+						{
+							id: 3,
+							title: 'Mow the lawn'
+						}
+					],
+					nextTodoId: 4
+				},
+				methods: {
+					addNewTodo: function() {
+						this.todos.push({
+							id: this.nextTodoId++,
+							title: this.newTodoText
+						})
+						this.newTodoText = ''
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
