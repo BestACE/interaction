@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<div id="app">
+	<template v-if="type==='name'">
+		<label>用户名</label>
+		<input type="text" placeholder="请输入用户名" />
+	</template>
+	<template v-else>
+		<label>邮箱</label>
+		<input type="text" placeholder="请输入邮箱" />
+	</template>
+	<button @click="handleClick">切换</button>
+</div>
+
+<script type="text/javascript">
+	var app=new Vue({
+		el:"#app",
+		data:{
+			type:'name'
+		},
+		methods:{
+			handleClick:function(){
+				this.type=this.type==='name'?'mail':'name';
+			}
+		}
+	});
+</script>
+	</body>
+</html>

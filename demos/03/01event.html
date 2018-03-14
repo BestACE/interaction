@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>查看源码的方式，了解详情</h2>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<div id="app">
+			<h1 :title="url">{{hi}}</h1>
+			<!--方法处理器-->
+			<input type="button" value="单击" v-on:click="clickIt" />
+			<!--简写-->
+			<input type="button" value="鼠标经过" @mouseover="overIt" />
+			<!--事件类型-->
+			<input type="button" value="双击" @dblclick="dbClickIt" />
+			<a href="https://developer.mozilla.org/zh-CN/docs/Web/Events">事件类型一览表</a>
+			<!--绑定多个事件-->
+			<input type="button" value="绑定多个事件" v-on="{click:clickIt,dblclick:dbClickIt}" />
+			<!--修饰符  .prevent 阻止默认操作-->
+			<a href="https://www.baidu.com" @click.prevent="clickIt">链接</a>
+			<!--ctrl 修饰符-->
+			<input type="button" value="ctrl+单击" @click.ctrl="clickIt" />
+			<!--keydown-->
+			<input type="text" @keydown="keyDownIt(event)" />
+			<!--left 修饰符-->
+			<input type="text" @keydown.37="console.log('向左移动')" />
+			<!--once 修饰符-->
+			<input type="button" value="单击" v-on:click.once="clickIt" />
+		</div>
+		<script type="text/javascript">
+			//简单的Vue程序
+			var app=new Vue({
+				el:"#app",
+				data:{
+					hi:"hello world",
+					url:"http://www.baidu.com",
+				},
+				methods:{
+					clickIt:function(){
+						console.log(this.url);
+					},
+					overIt:function(){
+						console.log("鼠标经过");
+					},
+					dbClickIt:function(){
+						console.log("双击");
+					},
+					keyDownIt:function(event){
+						//console.log(event.keyCode||event.which);
+						if(event.keyCode==37){
+							console.log("向左移动");
+						}
+					},
+					leftIt:function(){
+						console.log('向左移动');
+					}
+				}
+			});
+			//指令  v-bind v-on
+		</script>
+	</body>
+</html>
