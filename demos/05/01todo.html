@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			#app{
+				width: 500px;
+				max-height: 500px;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				overflow: hidden;
+				box-shadow: 0px 0px 6px rgba(0,0,0,.6);
+				padding: 30px;
+				background-color: #ff6666;
+				border: 10px solid #eeeeee;
+			}
+			#app header{
+				color: #fff;
+				border-bottom: 1px solid #fff;
+			}
+			#app header h1{
+				margin: 0;
+			}
+			#app input{
+				width: 100%;
+				border: none;
+				outline: none;
+				padding: 1rem;
+			}
+			#app ul{
+				margin: 0;
+				padding: 0;
+			}
+			#app li{
+				list-style-type: none;
+				background-color: rgba(255,255,255,.5);
+				margin: .3rem 0;
+				padding: 0.5rem;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<div id="app">
+			<header>
+				<h1>备忘录</h1>
+				<p>利用vue实现的简单备忘录</p>
+			</header>
+			
+			<input v-model="newTodoText" @keyup.enter="addNewTodo" placeholder="添加事项">
+			<ul>
+				<li v-for="(todo, index) in todos" :key="todo.id" :title="todo.title">
+					{{todo.title}}
+					<button @click="removeTodo(index)">X</button>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#app',
+				data: {
+					newTodoText: '',
+					todos: [{
+							id: 1,
+							title: '参加主题班会',
+						},
+						{
+							id: 2,
+							title: '完成交互开发工作',
+						},
+						{
+							id: 3,
+							title: '参加竞赛辅导'
+						}
+					],
+					nextTodoId: 4
+				},
+				methods: {
+					addNewTodo: function() {
+						this.todos.push({
+							id: this.nextTodoId++,
+							title: this.newTodoText
+						});
+						this.newTodoText = '';
+					},
+					removeTodo:function(i){
+						this.todos.splice(i, 1);
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>
