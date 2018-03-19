@@ -25,7 +25,6 @@
 			}
 			#app header{
 				color: #fff;
-				border-bottom: 1px solid #fff;
 			}
 			#app header h1{
 				margin: 0;
@@ -39,6 +38,8 @@
 			#app ul{
 				margin: 0;
 				padding: 0;
+				max-height: 280px;
+				overflow-y: auto;
 			}
 			#app li{
 				list-style-type: none;
@@ -46,6 +47,15 @@
 				margin: .3rem 0;
 				padding: 0.5rem;
 				vertical-align: middle;
+				position: relative;
+			}
+			#app li.done{
+				text-decoration: line-through;
+			}
+			#app li .group{
+				position: absolute;
+				right: 1rem;
+				top: .5rem;
 			}
 		</style>
 	</head>
@@ -58,11 +68,14 @@
 				<p>利用vue实现的简单备忘录</p>
 			</header>
 			
-			<input v-model="newTodoText" @keyup.enter="addNewTodo" placeholder="添加事项">
+			<input v-model="newTodoText" @keyup.enter="addItem" placeholder="添加事项">
 			<ul>
-				<li v-for="(todo, index) in todos" :key="todo.id" :title="todo.title">
+				<li v-for="(todo, index) in todos" :key="todo.id" :title="todo.title" :class="{'done':todo.done}">
 					{{todo.title}}
-					<button @click="removeTodo(index)">X</button>
+					<div class="group">
+						<button @click="doneItem(index)">ok</button>
+						<button @click="removeItem(index)">del</button>
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -74,28 +87,35 @@
 					todos: [{
 							id: 1,
 							title: '参加主题班会',
+							done:false,
 						},
 						{
 							id: 2,
 							title: '完成交互开发工作',
+							done:false,
 						},
 						{
 							id: 3,
-							title: '参加竞赛辅导'
+							title: '参加竞赛辅导',
+							done:true,
 						}
 					],
 					nextTodoId: 4
 				},
 				methods: {
-					addNewTodo: function() {
+					addItem: function() {
 						this.todos.push({
 							id: this.nextTodoId++,
-							title: this.newTodoText
+							title: this.newTodoText,
+							done:false,
 						});
 						this.newTodoText = '';
 					},
-					removeTodo:function(i){
+					removeItem:function(i){
 						this.todos.splice(i, 1);
+					},
+					doneItem:function(i){
+						this.todos[i].done=true;
 					}
 				}
 			})
