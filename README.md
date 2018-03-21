@@ -45,11 +45,7 @@
 5. 案例练习
 	1. [本地存储的todolist](https://bestace.github.io/interaction/demos/05/01todo.html)
 6. 自定义指令
-<<<<<<< HEAD
-	1. []()
-=======
 	1. [自定义指令示例](https://bestace.github.io/interaction/demos/06/01directive.html.html)
->>>>>>> 82941f9c6953ccfd3420282555a5114f17942d00
 
 ## 课程活动
 1. 免考活动

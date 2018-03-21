@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="container" v-fade-out-after="900">
+				<section class="jumbotron">
+					<h1 v-fade-out-after="700">Hello Bootstrap</h1>
+					<p v-fade-out-after="500">This is a simple template of Bootstrap</p>
+					<p v-fade-out-after="300"><a class="btn btn-primary btn-lg" href="https://getbootstrap.com/">Documents</a>
+				</section>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.directive('fade-out-after', {
+				isLiteral: true,
+				bind:function(el) {
+					var duration = +this.expression || 0;
+					el.classList.add('fade', 'in');
+					setTimeout(function(){
+						el.classList.remove('in')
+					},duration);
+				}
+			});
+			var app=new Vue({
+				el: "#app",
+				data:{}
+			})
+		</script>
+	</body>
+
+</html>
