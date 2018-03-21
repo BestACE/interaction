@@ -45,7 +45,8 @@
 5. 案例练习
 	1. [本地存储的todolist](https://bestace.github.io/interaction/demos/05/01todo.html)
 6. 自定义指令
-	1. [自定义指令示例](https://bestace.github.io/interaction/demos/06/01directive.html.html)
+	1. [自定义指令示例](https://bestace.github.io/interaction/demos/06/01directive.html)
+	2. [自定义指令实现定时淡出](https://bestace.github.io/interaction/demos/06/02fadeout.html)
 
 ## 课程活动
 1. 免考活动
