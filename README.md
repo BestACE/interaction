@@ -24,7 +24,7 @@
 3. [第03讲 事件](https://bestace.github.io/interaction/ppts/ppt/03.html)
 4. [第04讲 内置指令](https://bestace.github.io/interaction/ppts/ppt/04.html)
 5. [第05讲 案例练习](https://bestace.github.io/interaction/ppts/ppt/05.html)
-
+6. [第06讲 自定义指令](https://bestace.github.io/interaction/ppts/ppt/06.html)
 
 ## 课程案例
 1. 课程概述
@@ -44,6 +44,8 @@
 	4. [todoList](https://bestace.github.io/interaction/demos/04/04todo.html)
 5. 案例练习
 	1. [本地存储的todolist](https://bestace.github.io/interaction/demos/05/01todo.html)
+6. 自定义指令
+	1. [自定义指令示例](https://bestace.github.io/interaction/demos/06/01directive.html.html)
 
 ## 课程活动
 1. 免考活动

@@ -10,30 +10,27 @@
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 		<script type="text/javascript">
-			//全局定义
-			Vue.directive('hello',{
-				bind:function(el,binding){
-					console.log(binding.value.name+" say "+binding.value.msg);
-				}
-			});
-			var app=new Vue({
-				el:"#app",
-				data:{
-					
-				},
-				methods:{
-					
-				},
-				//局部定义
-				directives:{
-					focus:{
-						//指令选项
-						inserted:function(el,binding){
-							el.focus();
-						}
+		//全局定义
+		Vue.directive('hello',{
+			bind:function(el,binding){
+				console.log(binding.value.name+" say "+binding.value.msg);
+			}
+		});
+		var app=new Vue({
+			el:"#app",
+			data:{
+				
+			},
+			//局部定义
+			directives:{
+				focus:{
+					//指令选项
+					inserted:function(el,binding){
+						el.focus();
 					}
 				}
-			});
+			}
+		});
 		</script>
 	</body>
 </html>
