@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<say-hello></say-hello>
+			<say-hello2></say-hello2>
+			<say-hello3></say-hello3>
+			<say-hello4 message="来自父组件的问候"></say-hello4>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<script type="text/javascript">
+		//全局定义
+		Vue.component('say-hello',{
+			//选项
+			template:'<div>你好，欢迎来到Vue的世界！</div>'
+		});
+		var data={
+			message:"hello vue world."
+		}
+		Vue.component('say-hello3',{
+			//选项
+			template:'<div @click="chgSize($event)">{{message}}</div>',
+			data:function(){
+				return data;
+			},
+			methods:{
+				chgSize:function(event){
+					var ele=event.target;
+					ele.style.fontSize=parseInt(window.getComputedStyle(ele,null).getPropertyValue("font-size"))+2+"px";
+				}
+			}
+		});
+		Vue.component('say-hello4',{
+			//选项
+			props: ['message'],
+			template:'<div>{{message}}</div>',
+		});
+		var app=new Vue({
+			el:"#app",
+			data:{},
+			//局部定义
+			components:{
+				'say-hello2':{
+					template:'<div>你好，欢迎再次来到vue的世界！</div>'
+				}
+			}
+		});
+		</script>
+	</body>
+</html>

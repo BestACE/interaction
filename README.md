@@ -25,6 +25,7 @@
 4. [第04讲 内置指令](https://bestace.github.io/interaction/ppts/ppt/04.html)
 5. [第05讲 案例练习](https://bestace.github.io/interaction/ppts/ppt/05.html)
 6. [第06讲 自定义指令](https://bestace.github.io/interaction/ppts/ppt/06.html)
+7. [第07讲 组件](https://bestace.github.io/interaction/ppts/ppt/07.html)
 
 ## 课程案例
 1. 课程概述
@@ -47,6 +48,9 @@
 6. 自定义指令
 	1. [自定义指令示例](https://bestace.github.io/interaction/demos/06/01directive.html)
 	2. [自定义指令实现定时淡出](https://bestace.github.io/interaction/demos/06/02fadeout.html)
+7. 组件
+	1. [组件示例](https://bestace.github.io/interaction/demos/07/01component.html)
+
 
 ## 课程活动
 1. 免考活动
