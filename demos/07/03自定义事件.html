@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input[type=number]{
+				border: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<p>总数：<input type="number" min="0" max="20" :value="total"/></p>
+			<my-component
+				@increase="getTotal"
+				@reduce="getTotal"></my-component>
+		</div>
+		<template id="myTemplate">
+			<div>
+				<button @click="handleIncrease" :disabled="counter==20">+1</button>
+				<button @click="handleReduce" :disabled="counter==0">-1</button>
+			</div>
+		</template>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('my-component', {
+				template:"#myTemplate",
+				data:function(){
+					return {
+						counter:0
+					}
+				},
+				methods:{
+					handleIncrease:function(){
+						this.counter++;
+						this.$emit('increase',this.counter);
+					},
+					handleReduce:function(){
+						this.counter--;
+						this.$emit('reduce',this.counter);
+					}
+				}
+			});
+			var app = new Vue({
+				el: '#app',
+				data: {
+					total:0,
+				},
+				methods:{
+					getTotal:function(total){
+						this.total=total;
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

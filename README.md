@@ -50,6 +50,10 @@
 	2. [自定义指令实现定时淡出](https://bestace.github.io/interaction/demos/06/02fadeout.html)
 7. 组件
 	1. [组件示例](https://bestace.github.io/interaction/demos/07/01component.html)
+	2. [动态数据传入](https://bestace.github.io/interaction/demos/07/02动态数据传入.html)
+	3. [自定义事件](https://bestace.github.io/interaction/demos/07/03自定义事件.html)
+	4. [组件双向绑定](https://bestace.github.io/interaction/demos/07/04组件双向绑定.html)
+    5. [自定义组件-计数案例](https://bestace.github.io/interaction/demos/07/05/index.html)
 
 
 ## 课程活动

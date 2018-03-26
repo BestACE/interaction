@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="app">
+			<input type="text" v-model="parentMessage" />
+			<say-hello :message="parentMessage"></say-hello>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<script type="text/javascript">
+			Vue.component('say-hello', {
+				props: ['message'],
+				template: '<div>来自于父级元素的数据：{{message}}</div>',
+			});
+			var app = new Vue({
+				el: '#app',
+				data: {
+					parentMessage: "",
+				}
+			});
+		</script>
+	</body>
+
+</html>
