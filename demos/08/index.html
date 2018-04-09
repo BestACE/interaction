@@ -3,70 +3,67 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<!-- 引入Element样式 -->
-		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-		<style type="text/css">
-			body{
-				background-color: #081731;
-			}
-			.container{
-				margin: 20px auto;
-				padding: 10px;
-				min-height: 600px;
-				max-width: 1000px;
-				border: 10px solid #FFF;
-				color: #fff;
-			}
-			.container h1{
-				margin: 0;
-			}
-			.container .description{
-				margin: 10px 0;
-			}
-			.links a{
-				color: #CB1B45;
-				text-decoration: none;
+		<style>
+			.result h2{
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
-		<el-row id="app" class="container">
-			<el-col :span="18">
-				<el-row type="flex" justify="space-between">
-					<el-col :span="16">
-						<h1>{{ name }}</h1>
-						<div class="description">{{ description }}</div>
-						<div class="links">
-							<el-tag v-for="item in links"><a :href="item.linkUrl" > {{ item.linkName }} </a></el-tag>
-						</div>
-					</el-col>
-					<el-col :span="4">
-						<img :src="img"/>
-					</el-col>
-				</el-row>
-			</el-col>
-		</el-row>
-		<!-- 引入vue -->
-		<script src="https://unpkg.com/vue/dist/vue.js"></script>
-		<!-- 引入Element组件库 -->
-		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<div id="app">
+			<div class="edit" v-show="config.edited">
+				<label for="name">姓名:</label><input id="name" type="text" v-model="person.name" />
+				<label for="age">年龄:</label><input id="age" type="text" v-model="person.age" />
+				<label for="job">应聘:</label><input id="job" type="text" v-model="person.job" />
+				<label for="college">学校:</label><input id="college" type="text" v-model="person.college" />
+				<label for="major">专业:</label><input id="major" type="text" v-model="person.college" />
+				<br />
+				<label for="fav">兴趣:</label><input id="fav" type="text" v-model="favTemp" @keyup.enter="addFav" placeholder="输入兴趣，回车添加！"/>
+			</div>
+			<div class="result">
+				<button @click="config.edited=!config.edited">编辑简历</button>
+				<h2>{{person.name}}的简历</h2>
+				<dl>
+					<dt>姓名</dt>
+					<dd>{{person.name}}</dd>
+					<dt>年龄</dt>
+					<dd>{{person.age}}</dd>
+					<dt>应聘</dt>
+					<dd>{{person.job}}</dd>
+					<dt>学校</dt>
+					<dd>{{person.college}}</dd>
+					<dt>专业</dt>
+					<dd>{{person.major}}</dd>
+					<dt>兴趣</dt>
+					<dd v-for="item in person.fav">{{ item }}</dd>
+				</dl>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 		<script type="text/javascript">
 			var app=new Vue({
 				el:"#app",
 				data:{
-					name:'王海庆',
-					description:'痴迷前端的极客儿，可能并不优秀，坚持每天进步！',
-					links:[{
-						linkName:'作品集',
-						linkUrl:'https://codepen.io/whqet/'
-					},{
-						linkName:'个人GIthub',
-						linkUrl:'https://github.com/whqet/'
-					},{
-						linkName:'邮箱',
-						linkUrl:'whqet@qq.com'
-					}],
-					img:'img/whqet.jpg',
+					favTemp:'',
+					person:{
+						name:'王海庆',
+						age:18,
+						job:'前端开发',
+						college:'浙江邮电职业技术学院',
+						major:'软件技术',
+						fav:['羽毛球','编程','跑步'],
+					},
+					config:{
+						edited:true,
+					}
+				},
+				methods:{
+					addFav:function(){
+						if(this.favTemp!=""){
+							this.person.fav.push(this.favTemp);
+							this.favTemp="";
+						}
+					}
 				}
 			});
 		</script>
