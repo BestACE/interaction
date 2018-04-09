@@ -26,17 +26,25 @@
 				border: 1px solid #fff;
 				min-height: 200px;
 			}
+			@media only screen and (min-width: 100px) and (max-width: 640px) {
+				/*
+				 在屏幕设备中，并且宽度介于100px-640px的设备中使用
+				 * */
+				body{
+					background: #dd0;
+				}
+			}
 		</style>
 	</head>
 	<body>
 		<div id="app">
 			<el-row class="container">
 				<el-col>
-					<el-row type="flex" justify="space-around" :gutter="20" class="header">
-						<el-col :span='16'>
+					<el-row type="flex" :gutter="20" class="header">
+						<el-col :span='4'>
 							<div class="logo"></div>
 						</el-col>
-						<el-col :span="4">
+						<el-col :offset="4" :span="4">
 							<div class="img"></div>
 						</el-col>
 					</el-row>
@@ -65,6 +73,8 @@
 			//sass less CSS的预处理器，赋予CSS以编程语言的特性
 			//sass安装   gulp\webpack 自动化构建
 			
+			//自动化建构工具（前端开发中一些经常性的、繁琐的处理工作，比如压缩文件、合并文件、编译文件）  grunt gulp webpack
+			
 			//CSS布局方式
 				//传统布局方式   浮动 定位  盒模型   第二学期主要学的方式   操作繁琐、自定义性强
 				//最新布局技术   瀑布流、自定义的布局方式    兼容性问题（ https://caniuse.com/）
@@ -73,6 +83,16 @@
 				//网格布局方式（栅格系统）
 					//bootstrap、element等UI库
 					//960 Grid System等网格库
+					
+			//响应式布局，为了实现多个终端设备共用网页，并且呈现不同的样式
+				//媒体查询 根据使用设备的某个属性判断设备，进而呈现不同的CSS
+				//@media
+					
+			//提高网页性能的关键点    减少请求
+				//请求   100个js .3k   浏览器向服务器说，我要这个文件   服务器接受之后反应之后发送
+				//请求   1个js   30k
+				
+			//设置打印样式
 		</script>
 	</body>
 </html>
