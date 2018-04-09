@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 引入Element样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<style type="text/css">
+			body{
+				background-color: #081731;
+			}
+			.container{
+				margin: 20px auto;
+				padding: 10px;
+				min-height: 600px;
+				max-width: 1000px;
+				border: 10px solid #FFF;
+				color: #fff;
+			}
+			.container h1{
+				margin: 0;
+			}
+			.container .description{
+				margin: 10px 0;
+			}
+			.links a{
+				color: #CB1B45;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<el-row id="app" class="container">
+			<el-col :span="18">
+				<el-row type="flex" justify="space-between">
+					<el-col :span="16">
+						<h1>{{ name }}</h1>
+						<div class="description">{{ description }}</div>
+						<div class="links">
+							<el-tag v-for="item in links"><a :href="item.linkUrl" > {{ item.linkName }} </a></el-tag>
+						</div>
+					</el-col>
+					<el-col :span="4">
+						<img :src="img"/>
+					</el-col>
+				</el-row>
+			</el-col>
+		</el-row>
+		<!-- 引入vue -->
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<!-- 引入Element组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:"#app",
+				data:{
+					name:'王海庆',
+					description:'痴迷前端的极客儿，可能并不优秀，坚持每天进步！',
+					links:[{
+						linkName:'作品集',
+						linkUrl:'https://codepen.io/whqet/'
+					},{
+						linkName:'个人GIthub',
+						linkUrl:'https://github.com/whqet/'
+					},{
+						linkName:'邮箱',
+						linkUrl:'whqet@qq.com'
+					}],
+					img:'img/whqet.jpg',
+				}
+			});
+		</script>
+	</body>
+</html>
