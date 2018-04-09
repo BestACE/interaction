@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>使用Element实现简单网页</title>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<style>
+			body{
+				background-color: #081731;
+				padding: 30px;
+			}
+			.container{
+				min-height:400px;
+				max-width: 1000px;
+				border: 10px solid #fff;
+				margin: auto;
+				padding: 20px;
+			}
+			.header{
+				min-height: 300px;
+			}
+			.header .logo,
+			.header .img{
+				border: 1px solid #fff;
+				min-height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<el-row class="container">
+				<el-col>
+					<el-row type="flex" justify="space-around" :gutter="20" class="header">
+						<el-col :span='16'>
+							<div class="logo"></div>
+						</el-col>
+						<el-col :span="4">
+							<div class="img"></div>
+						</el-col>
+					</el-row>
+					<el-row class="header">
+						<el-col :span='12'></el-col>
+						<el-col :span="12"></el-col>
+					</el-row>
+					<el-row class="content">
+						<el-col></el-col>
+						<el-col></el-col>
+					</el-row>
+				</el-col>
+			</el-row>
+		</div>
+		<!-- 导入Vue -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script>
+			//基于Vue
+			var app=new Vue({
+				el:"#app",
+				data:{}
+			});
+			
+			//sass less CSS的预处理器，赋予CSS以编程语言的特性
+			//sass安装   gulp\webpack 自动化构建
+			
+			//CSS布局方式
+				//传统布局方式   浮动 定位  盒模型   第二学期主要学的方式   操作繁琐、自定义性强
+				//最新布局技术   瀑布流、自定义的布局方式    兼容性问题（ https://caniuse.com/）
+					//Flexbox
+					//CSS Grid 系列
+				//网格布局方式（栅格系统）
+					//bootstrap、element等UI库
+					//960 Grid System等网格库
+		</script>
+	</body>
+</html>
