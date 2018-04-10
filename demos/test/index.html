@@ -25,30 +25,41 @@
 			}
 			
 			.header {
-				min-height: 300px;
+				/*min-height: 300px;*/
 			}
 			
 			.header .logo,
 			.header .img {
 				/*border: 1px solid #fff;*/
-				min-height: 200px;
+				/*min-height: 200px;*/
 			}
-			.header .name{
+			
+			.header .name {
 				margin: 0.5em 0;
 				font-size: 28px;
 			}
-			.header .description{
+			
+			.header .description {
 				margin-bottom: .5em;
 			}
-			.header .link{
+			
+			.header .link {
 				text-decoration: none;
 				color: #CB1B45;
 			}
-			.header .img{
+			
+			.header .img {
 				overflow: hidden;
 			}
-			.header .img img{
+			
+			.header .img img {
 				width: 100%;
+			}
+			
+			.menu:hover {
+				transition: all .5s;
+				color: #00f;
+				font-size: 1.5em;
 			}
 			/*
 				 在屏幕设备中，并且宽度介于100px-640px的设备中使用
@@ -60,6 +71,20 @@
 				}
 			}*/
 			
+			.el-button.is-round {
+				padding: 23px;
+				border-radius: 100%;
+			}
+			.skill{
+				position: relative;
+			}
+			.skill::after{
+				content: attr(data-text);
+				position: absolute;
+				left: 10px;
+				top: 2px;
+				font-size: 0.8em;
+			}
 		</style>
 	</head>
 
@@ -87,8 +112,15 @@
 							</div>
 						</el-col>
 					</el-row>
-					<el-row class="header">
-						<el-col :span='12'></el-col>
+					<el-row class="content">
+						<el-col :span='12'>
+							<div class="card">
+								<h2>技能列表</h2>
+								<div>
+									<el-progress class='skill' v-for="item in skills" :data-text="item.sName" :text-inside="true" :stroke-width="18" :percentage="item.sNum" :color="item.sColor"></el-progress>
+								</div>
+							</div>
+						</el-col>
 						<el-col :span="12"></el-col>
 					</el-row>
 				</el-col>
@@ -104,19 +136,32 @@
 			var app = new Vue({
 				el: "#app",
 				data: {
-					name:"王海庆",
-					description:"致力于提升自己的前端爱好者",
-					links:[{
-						lName:'作品集',
-						lUrl:'https://codepen.io/whqet/'
-					},{
-						lName:'Github主页',
-						lUrl:'https://github.com/whqet/'
-					},{
-						lName:'Github主页',
-						lUrl:'https://github.com/whqet/'
+					name: "王海庆",
+					description: "致力于提升自己的前端爱好者",
+					links: [{
+						lName: '作品集',
+						lUrl: 'https://codepen.io/whqet/'
+					}, {
+						lName: 'Github主页',
+						lUrl: 'https://github.com/whqet/'
+					}, {
+						lName: '邮箱',
+						lUrl: 'whqet@qq.com'
 					}],
-					imgUrl:'img/p.jpg',
+					imgUrl: 'img/p.jpg',
+					skills:[{
+						sName:'html',
+						sNum:80,
+						sColor:'#33ff33'
+					},{
+						sName:'js',
+						sNum:95,
+						sColor:'#66dd33'
+					},{
+						sName:'java',
+						sNum:90,
+						sColor:'#99bb33'
+					}],
 				},
 			});
 
@@ -143,6 +188,12 @@
 			//请求   1个js   30k
 
 			//设置打印样式
+
+			//图片图标，不能动态改变颜色、大小等样式，可扩展性不强
+			//icon图标
+			//用特殊字体实现图标效果
+			//本质上，特殊网络字体。  @font-face
+			//font-awesome
 		</script>
 	</body>
 
