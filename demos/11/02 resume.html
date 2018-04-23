@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.mint-swipe-item {
+				min-height: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<mt-header fixed title="个人简历">
+				<mt-button icon="more" slot="right"></mt-button>
+			</mt-header>
+			<mt-tab-container class="page-tabbar-container" v-model="selected">
+				<mt-tab-container-item id="教育">
+					<mt-cell v-for="n in 10" :title="'教育 ' + n" />
+				</mt-tab-container-item>
+				<mt-tab-container-item id="技能">
+					<mt-cell v-for="n in 5" :title="'技能 ' + n" />
+				</mt-tab-container-item>
+				<mt-tab-container-item id="项目">
+					<mt-cell v-for="n in 7" :title="'项目' + n" />
+				</mt-tab-container-item>
+				<mt-tab-container-item id="我的">
+					<div class="page-part">
+						<mt-cell v-for="n in 12" :title="'我的 ' + n" />
+					</div>
+				</mt-tab-container-item>
+			</mt-tab-container>
+			<mt-tabbar v-model="selected">
+				<mt-tab-item id="教育">
+					<i class="fa fa-code"></i> 教育
+				</mt-tab-item>
+				<mt-tab-item id="技能">
+					<i class="fa fa-desktop"></i> 技能
+				</mt-tab-item>
+				<mt-tab-item id="项目">
+					<i class="fa fa-qrcode"></i> 项目
+				</mt-tab-item>
+				<mt-tab-item id="我的">
+					<i class="fa fa-user"></i> 我的
+				</mt-tab-item>
+			</mt-tabbar>
+		</div>
+	</body>
+	<!-- 先引入 Vue -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<!-- 引入组件库 -->
+	<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data() {
+				return {
+					selected: '外卖'
+				}
+			},
+			methods: {
+				
+			}
+		})
+	</script>
+
+</html>
