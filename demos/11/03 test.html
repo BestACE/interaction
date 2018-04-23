@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+		<!-- 引入font awesome -->
+		<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<!-- 先引入 Vue -->
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<!-- 引入router -->
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.mint-tab-container {
+				margin-top: 40px;
+			}
+			
+			.mint-tab-container h3 {
+				margin-left: 10px;
+				padding-left: 10px;
+				border-left: 2px solid grey;
+			}
+			
+			.mint-cell-wrapper {
+				padding-left: 0px;
+			}
+			
+			.mint-cell-text {
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<mt-header fixed title="我的简历">
+				<!--<mt-button icon="back" slot="left">返回</mt-button>-->
+				<mt-button icon="more" slot='right'></mt-button>
+			</mt-header>
+			<mt-tab-container v-model='selected'>
+				<mt-tab-container-item id="教育">
+					<h3>教育经历</h3>
+					<mt-cell v-for='item in edu' :title="item.eduLevel" :value="item.levelName"></mt-cell>
+					<h3>所学专业</h3>
+					<mt-cell :title="major" to="//github.com" is-link>
+					</mt-cell>
+					<h3>专业课程</h3>
+					<mt-cell v-for='item in courses' :title="item"></mt-cell>
+				</mt-tab-container-item>
+				<mt-tab-container-item id="项目">
+					<mt-cell-swipe title="标题文字" :right="[
+					    {
+					      content: 'Del',
+					      style: { background: 'lightblue', color: '#fff' },
+					      handler: () => this.del=true
+					    }
+					  ]"></mt-cell-swipe>
+					<mt-spinner type="double-bounce" v-show="del"></mt-spinner>
+				</mt-tab-container-item>
+				<mt-tab-container-item id="技能">
+					技能内容
+				</mt-tab-container-item>
+				<mt-tab-container-item id="我的">
+					我的内容
+				</mt-tab-container-item>
+			</mt-tab-container>
+			<mt-tabbar v-model='selected'>
+				<mt-tab-item id="教育">
+					<i slot="icon" class="fa fa-code"></i> 教育
+				</mt-tab-item>
+				<mt-tab-item id="项目">
+					<i slot="icon" class="fa fa-desktop"></i> 项目
+				</mt-tab-item>
+				<mt-tab-item id="技能">
+					<i slot="icon" class="fa fa-qrcode"></i> 技能
+				</mt-tab-item>
+				<mt-tab-item id="我的">
+					<i slot="icon" class="fa fa-user"></i> 我的
+				</mt-tab-item>
+			</mt-tabbar>
+		</div>
+		<script type="text/javascript">
+			var app = new Vue({
+				el: "#app",
+				data: {
+					selected: '教育',
+					major: '软件技术专业',
+					edu: [{
+						eduLevel: '大学',
+						levelName: '浙江邮电职业技术学院'
+					}, {
+						eduLevel: '高中',
+						levelName: '绍兴一中'
+					}, {
+						eduLevel: '初中',
+						levelName: '元培中学'
+					}, {
+						eduLevel: '小学',
+						levelName: '北海小学'
+					}],
+					courses: ['Java程序设计', '前端开发', '交互开发', '虚拟现实', 'Java Web开发'],
+					del: false,
+				}
+			});
+			/*
+			 base 64 图片方式
+			  幽灵按钮
+			 * */
+		</script>
+	</body>
+
+</html>
